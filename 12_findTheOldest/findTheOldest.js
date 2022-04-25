@@ -1,11 +1,13 @@
 const findTheOldest = function(people) {
-    let age = 0;
-    let oldest;
-    for (let i = 0; i < people.length; i++) {
-        if (!people[i].hasOwnProperty(dateOfDeath))
-            people[i].dateOfDeath =
-    }
-    console.log(oldest);
+    let oldest = people[0];
+    for(let i = 0; i < people.length; i++){
+        if(!people[i].yearOfDeath) {
+            people[i].yearOfDeath = 2022
+        }
+        if(people[i].yearOfDeath - people[i].yearOfBirth > oldest.yearOfDeath - oldest.yearOfBirth) {
+            oldest = people[i];
+        }
+    }   
     return oldest;
 };
 
